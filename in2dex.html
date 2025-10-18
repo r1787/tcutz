@@ -1,0 +1,1028 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tcutzz - Premium Male Grooming</title>
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #d4af37;
+            --accent: #333;
+            --light: #f8f8f8;
+            --text: #333;
+            --text-light: #777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            border: 2px dashed var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            cursor: pointer;
+            transition: all 0.3s;
+            flex-direction: column;
+            text-align: center;
+            font-size: 0.8rem;
+            padding: 5px;
+            overflow: hidden;
+        }
+        
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .logo-text h1 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #b8941f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .service-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+            cursor: pointer;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .price-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .service-info {
+            padding: 20px;
+        }
+        
+        .service-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .service-info p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background-color: #ddd;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            background-color: var(--secondary);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .contact-form {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+        
+        .quick-links {
+            list-style: none;
+        }
+        
+        .quick-links li {
+            margin-bottom: 10px;
+        }
+        
+        .quick-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .quick-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 1100;
+            overflow: auto;
+        }
+        
+        .modal-content {
+            position: relative;
+            margin: 5% auto;
+            width: 80%;
+            max-width: 800px;
+            animation: zoom 0.3s;
+        }
+        
+        @keyframes zoom {
+            from {transform: scale(0.8); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+        
+        .modal-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .modal-info {
+            background-color: white;
+            padding: 20px;
+        }
+        
+        .modal-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .modal-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            transition: color 0.3s;
+        }
+        
+        .close:hover {
+            color: var(--secondary);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-img, .about-text {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                width: 95%;
+            }
+            
+            .hero {
+                padding: 70px 0;
+            }
+            
+            .services, .about, .contact {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo-placeholder" id="logoUpload">
+                        <!-- PASTE YOUR ONLINE LOGO URL HERE -->
+                        <img src="https://i.ibb.co/cX8zHybT/file-00000000b5546243b1498758a607098a.png"> 
+                                           </div>
+                    <div class="logo-text">
+                        <h1>Tcutzz</h1>
+                        <p>Premium Male Grooming</p>
+                    </div>
+                </div>
+                <nav>
+                    <div class="mobile-menu">
+                        ☰
+                    </div>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h2>Precision Cuts for the Modern Man</h2>
+            <p>At Tcutzz, we blend traditional barbering techniques with contemporary styles to give you the perfect look that matches your personality.</p>
+            <a href="#services" class="btn">View Our Services</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Explore our range of premium grooming services tailored for the modern gentleman.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1 - Classic Cut -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <!-- PASTE YOUR ONLINE IMAGE URL HERE -->
+                        <!-- <img src="https://example.com/classic-cut.jpg" class="service-image"> -->
+                        <img src="https://i.ibb.co/Lz0WR42c/classic-cut-jpg.jpg"                        </div>
+                        <div class="price-tag">$35</div>
+                    </div>
+                    <div class="service-info">
+                        <h3>Classic Cut</h3>
+                        <p>A timeless haircut that never goes out of style. Perfect for the professional gentleman.</p>
+                        <a href="#" class="btn view-details">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 - Fade Master -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <!-- PASTE YOUR ONLINE IMAGE URL HERE -->
+                        <!-- <img src="https://example.com/fade-master.jpg" class="service-image"> -->
+                        <img src="https://i.ibb.co/cStSg9fd/fade-master-jpg.jpg"                        </div>
+                        <div class="price-tag">$45</div>
+                    </div>
+                    <div class="service-info">
+                        <h3>Fade Master</h3>
+                        <p>Expert fades with clean lines and sharp transitions for a modern, edgy look.</p>
+                        <a href="#" class="btn view-details">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 - Beard Trim -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <!-- PASTE YOUR ONLINE IMAGE URL HERE -->
+                        <!-- <img src="https://example.com/beard-trim.jpg" class="service-image"> -->
+                        <img src="https://i.ibb.co/nscTjq4y/beard-trim-jpg.png"                        </div>
+                        <div class="price-tag">$25</div>
+                    </div>
+                    <div class="service-info">
+                        <h3>Beard Trim & Shape</h3>
+                        <p>Precision beard trimming and shaping to maintain your facial hair in perfect form.</p>
+                        <a href="#" class="btn view-details">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 - Hot Towel Shave -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <!-- PASTE YOUR ONLINE IMAGE URL HERE -->
+                        <!-- <img src="https://example.com/hot-towel-shave.jpg" class="service-image"> -->
+                        <img src="https://graftonbarbers.com/wp-content/uploads/2022/11/person-getting-hot-towel-shave-2-1024x748.webp"                        </div>
+                        <div class="price-tag">$40</div>
+                    </div>
+                    <div class="service-info">
+                        <h3>Hot Towel Shave</h3>
+                        <p>The ultimate traditional shaving experience with hot towels and premium products.</p>
+                        <a href="#" class="btn view-details">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Service 5 - Hair Treatment -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <!-- PASTE YOUR ONLINE IMAGE URL HERE -->
+                        <!-- <img src="https://example.com/hair-treatment.jpg" class="service-image"> -->
+                        <img src="https://i.ibb.co/Zzwq6pdc/hair-treatment-jpg.jpg"                        </div>
+                        <div class="price-tag">$30</div>
+                    </div>
+                    <div class="service-info">
+                        <h3>Hair Treatment</h3>
+                        <p>Nourishing treatments to restore health and vitality to your hair and scalp.</p>
+                        <a href="#" class="btn view-details">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Service 6 - Kids Cut -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <!-- PASTE YOUR ONLINE IMAGE URL HERE -->
+                        <!-- <img src="https://example.com/kids-cut.jpg" class="service-image"> -->
+                        <img src="https://i.ibb.co/bg9SMbtK/kids-cut-jpg.jpg"                        </div>
+                        <div class="price-tag">$20</div>
+                    </div>
+                    <div class="service-info">
+                        <h3>Kids Cut</h3>
+                        <p>Specialized cuts for the younger gentlemen in a fun and comfortable environment.</p>
+                        <a href="#" class="btn view-details">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <!-- PASTE YOUR ONLINE ABOUT IMAGE URL HERE -->
+                    <!-- <img src="https://example.com/about-image.jpg"> -->
+                    <img src="https://i.ibb.co/j9j5ZBqm/about-jpeg.jpg"                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>About Tcutzz</h2>
+                    <p>Founded in 2015, Tcutzz has established itself as the premier destination for male grooming in the community. Our barbers are skilled artisans who take pride in their craft, ensuring every client leaves looking and feeling their best.</p>
+                    <p>We believe that a great haircut is more than just a service - it's an experience. That's why we've created a welcoming atmosphere where men can relax, unwind, and leave with a renewed sense of confidence.</p>
+                    <p>Using only the finest products and techniques, our team stays current with the latest trends while honoring traditional barbering methods that have stood the test of time.</p>
+                    <a href="#contact" class="btn">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch to book your appointment or ask any questions about our services.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            📍
+                        </div>
+                        <div class="contact-details">
+                            <h3>Visit Our Shop</h3>
+                            <p>123 Barber Street, Downtown<br>City, State 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            📞
+                        </div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p>(555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            ✉️
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p>info@tcutzz.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            🕒
+                        </div>
+                        <div class="contact-details">
+                            <h3>Opening Hours</h3>
+                            <p>Monday - Friday: 9am - 7pm<br>Saturday: 8am - 6pm<br>Sunday: 10am - 4pm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Tcutzz</h3>
+                    <p>Your premier destination for premium male grooming services. We blend traditional techniques with modern styles to give you the perfect look.</p>
+                    <div class="social-links">
+                        <a href="#">FB</a>
+                        <a href="#">IG</a>
+                        <a href="#">TW</a>
+                        <a href="#">TT</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="quick-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Book Appointment</a></li>
+                        <li><a href="#">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="quick-links">
+                        <li><a href="#">Classic Cut</a></li>
+                        <li><a href="#">Fade Master</a></li>
+                        <li><a href="#">Beard Trim</a></li>
+                        <li><a href="#">Hot Towel Shave</a></li>
+                        <li><a href="#">Hair Treatment</a></li>
+                        <li><a href="#">Kids Cut</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates on special offers and new services.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Tcutzz Barbershop. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Image Viewing -->
+    <div class="modal" id="imageModal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <img class="modal-img" id="modalImage" src="">
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <div class="modal-price" id="modalPrice"></div>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // Modal Functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalPrice = document.getElementById('modalPrice');
+        const modalDescription = document.getElementById('modalDescription');
+        const closeBtn = document.querySelector('.close');
+
+        // Service data
+        const services = [
+            {
+                title: "Classic Cut",
+                price: "$35",
+                description: "A timeless haircut that never goes out of style. Perfect for the professional gentleman. Our barbers will consult with you to create the perfect classic cut that complements your facial structure and personal style.",
+            },
+            {
+                title: "Fade Master",
+                price: "$45",
+                description: "Expert fades with clean lines and sharp transitions for a modern, edgy look. Our fade specialists use precision techniques to create seamless blends that elevate your style.",
+            },
+            {
+                title: "Beard Trim & Shape",
+                price: "$25",
+                description: "Precision beard trimming and shaping to maintain your facial hair in perfect form. We'll sculpt your beard to enhance your facial features and keep it looking sharp between cuts.",
+            },
+            {
+                title: "Hot Towel Shave",
+                price: "$40",
+                description: "The ultimate traditional shaving experience with hot towels and premium products. This luxurious service includes pre-shave oil, warm lather, multiple hot towels, and a precision straight razor shave.",
+            },
+            {
+                title: "Hair Treatment",
+                price: "$30",
+                description: "Nourishing treatments to restore health and vitality to your hair and scalp. Our treatments address issues like dryness, damage, dandruff, and thinning hair using premium products.",
+            },
+            {
+                title: "Kids Cut",
+                price: "$20",
+                description: "Specialized cuts for the younger gentlemen in a fun and comfortable environment. Our patient barbers make haircuts an enjoyable experience for kids of all ages.",
+            }
+        ];
+
+        // Add click events to service images and buttons
+        document.querySelectorAll('.view-details').forEach((element, index) => {
+            element.addEventListener('click', function(e) {
+                e.preventDefault();
+                const service = services[index];
+                
+                // Get the image source from the service card
+                const serviceCard = this.closest('.service-card');
+                const serviceImage = serviceCard.querySelector('img');
+                
+                modalImg.src = serviceImage ? serviceImage.src : '';
+                modalTitle.textContent = service.title;
+                modalPrice.textContent = service.price;
+                modalDescription.textContent = service.description;
+                modal.style.display = 'block';
+            });
+        });
+
+        // Close modal
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Logo upload functionality
+        document.getElementById('logoUpload').addEventListener('click', function() {
+            alert('To add your logo, simply paste your online image URL in the logo section. Look for the comment that says "PASTE YOUR ONLINE LOGO URL HERE"');
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav ul').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
